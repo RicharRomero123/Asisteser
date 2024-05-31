@@ -1,3 +1,4 @@
+"use client"
 import CallToActionWithVideo from "@/components/main/hero/hero";
 import CtaSection from "@/components/ui/Contacto/Contacto";
 import Nosotros from "@/components/ui/Nosotros/Nosotros";
