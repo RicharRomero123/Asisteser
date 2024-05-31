@@ -22,7 +22,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <Navbar />
         {children}
-        <WhatsAppFloatIcon phoneNumber="916762916"/>
+        <WhatsAppFloatIcon/>
         <FooterBlock/>
       </body>
     </html>

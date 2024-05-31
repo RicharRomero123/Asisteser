@@ -1,39 +1,45 @@
-"use client"
+"use client";
+
 import React, { useState, useEffect, MouseEvent } from 'react';
-import { FaWhatsapp } from 'react-icons/fa';
+import Lottie from 'lottie-react';
+import whatsapp from './whatsapp.json';
 
-interface WhatsAppFloatIconProps {
-  phoneNumber: string;
-}
-
-const WhatsAppFloatIcon: React.FC<WhatsAppFloatIconProps> = ({ phoneNumber }) => {
+const WhatsAppFloatIcon = () => {
   const [isDragging, setIsDragging] = useState(false);
-  const [position, setPosition] = useState({ x: window.innerWidth - 100, y: window.innerHeight - 100 });
+  const [position, setPosition] = useState({ x: 0, y: 0 });
   const [dragged, setDragged] = useState(false);
 
   useEffect(() => {
-    const updatePosition = () => {
-      const newX = window.innerWidth - 100;
-      const newY = window.innerHeight - 100;
+    if (typeof window !== 'undefined') {
+      const newX = window.innerWidth - 200; // Adjusted for larger size and more left position
+      const newY = window.innerHeight - 160; // Adjusted for larger size and position
       setPosition({ x: newX, y: newY });
-    };
 
-    window.addEventListener('resize', updatePosition); // Ajustar en caso de cambio de tamaño
+      const updatePosition = () => {
+        const updatedX = window.innerWidth - 200; // Adjusted for larger size and more left position
+        const updatedY = window.innerHeight - 160; // Adjusted for larger size and position
+        setPosition({ x: updatedX, y: updatedY });
+      };
 
-    return () => window.removeEventListener('resize', updatePosition);
+      window.addEventListener('resize', updatePosition);
+
+      return () => {
+        window.removeEventListener('resize', updatePosition);
+      };
+    }
   }, []);
 
   
   const handleClick = (e: MouseEvent) => {
     if (dragged) {
-      e.preventDefault(); // Prevenir acción si se ha arrastrado
-      setDragged(false); // Resetear estado para el próximo clic
+      e.preventDefault();
+      setDragged(false);
     }
   };
 
   return (
     <a
-      href={`https://wa.link/895m09`}
+      href={`https://wa.link/s79nyd`}
       onClick={handleClick}
       style={{
         position: 'fixed',
@@ -42,12 +48,12 @@ const WhatsAppFloatIcon: React.FC<WhatsAppFloatIconProps> = ({ phoneNumber }) =>
         zIndex: 50,
         cursor: isDragging ? 'grabbing' : 'pointer',
       }}
-      className="flex items-center justify-center w-16 h-16 bg-green-500 text-white rounded-full shadow-lg hover:bg-green-600 transition-colors duration-200 ease-in-out"
+      className="flex items-center justify-center w-60 h-60 rounded-full shadow-lg transition-colors duration-200 ease-in-out"
       target="_blank"
       rel="noopener noreferrer"
       title="Chat with us on WhatsApp!"
     >
-      <FaWhatsapp className="text-4xl" />
+      <Lottie animationData={whatsapp} loop autoplay style={{ width: '100%', height: '100%' }} />
     </a>
   );
 };
