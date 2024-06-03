@@ -59,7 +59,7 @@ export default function HeroSection() {
                   Proporcionamos acceso a personal de salud altamente calificado para el bienestar de sus seres queridos.
                 </p>
                 <div className="flex flex-wrap items-center gap-4 z-30 sm:w-max sm:flex-nowrap mx-auto lg:mx-0">
-                  <Link href="#" className="px-5 h-12 flex items-center sm:w-max w-full justify-center bg-gradient-to-br from-green-700 to-sky-600 text-white rounded-lg ease-linear transition">
+                  <Link href="https://wa.link/s79nyd" className="px-5 h-12 flex items-center sm:w-max w-full justify-center bg-gradient-to-br from-green-700 to-sky-600 text-white rounded-lg ease-linear transition">
                     ¡Solicita una Consulta!
                   </Link>
                   <Link href="#" className="px-5 h-12 flex items-center sm:w-max w-full justify-center gap-x-3 border border-gray-200 dark:border-gray-900/60 rounded-lg text-green-800 dark:text-gray-100 bg-green-50 dark:bg-gray-900">
