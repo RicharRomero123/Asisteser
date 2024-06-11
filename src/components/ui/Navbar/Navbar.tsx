@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { Img } from '@chakra-ui/react'
 import { BiLogoFacebookSquare, BiLogoInstagram } from 'react-icons/bi'
@@ -8,6 +8,20 @@ import { FiPhone } from 'react-icons/fi'
 
 const Navbar = () => {
   const [navIsOpened, setNavIsOpened] = useState(false)
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 1024)
+    }
+
+    handleResize()
+    window.addEventListener('resize', handleResize)
+
+    return () => {
+      window.removeEventListener('resize', handleResize)
+    }
+  }, [])
 
   const closeNavbar = () => {
     setNavIsOpened(false)
@@ -62,10 +76,14 @@ const Navbar = () => {
                 </a>
               </div>
             </div>
-            <div className="flex lg:hidden items-center gap-2 text-mediumBlue dark:text-light mt-4">
-              <FiPhone className="text-2xl" />
-              <span className="text-lg font-bold">967 930 749</span>
-            </div>
+            {isMobile && (
+              <div className="flex lg:hidden items-center gap-2 text-mediumBlue dark:text-light mt-4">
+                <a href="tel:+51967930749" className="flex items-center gap-2">
+                  <FiPhone className="text-2xl" />
+                  <span className="text-lg font-bold">967 930 749</span>
+                </a>
+              </div>
+            )}
           </div>
           <div className="hidden lg:flex items-center gap-2 text-mediumBlue dark:text-light">
             <FiPhone className="text-2xl" />
