@@ -85,12 +85,11 @@ export default function HeroSection() {
                 <div className="rounded-lg absolute right-0 bottom-0 w-11/12 h-2/5 bg-gradient-to-tr from-bright to-light dark:bg-gradient-to-tr dark:from-veryDarkBlue dark:to-mediumBlue" style={{ zIndex: 1 }} />
                
                 <img
-                  src="https://res.cloudinary.com/daassyisd/image/upload/v1718043728/dxnizhcelc4fzeqledvd.png"
+                  src="/image/Enfermera.webp"
                   alt="Healthcare"
                   width={500}
                   height={500}
                   style={{ zIndex: 2 }}
-                  className="relative"
                 />
               </div>
             </div>

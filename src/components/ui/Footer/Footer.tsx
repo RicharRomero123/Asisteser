@@ -98,6 +98,10 @@ const FooterBlock = () => {
           <p className="text-black dark:text-white text-justify">
             Proporcionamos acceso confiable a personal de salud asistencial altamente calificado en Lima y todo el Perú. Nos comprometemos a brindar atención integral y profesional.
           </p>
+          <div className="flex items-center space-x-7 ">
+            <img src="/footer/colegio-enfermeros.webp" className="w-16 h-16 object-contain" alt="Colegio de Enfermeros" />
+            <img src="/footer/minsa.webp" className="w-30 h-10 object-contain" alt="Ministerio de Salud" />
+          </div>
         </div>
 
         <div>

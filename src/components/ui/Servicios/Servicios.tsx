@@ -69,7 +69,7 @@ const features: Feature[] = [
     description: "Atención humanista y profesional. Ofrecemos servicios de enfermería técnica con un enfoque humanista. Nuestro equipo capacitado brinda cuidado personalizado, seguro y efectivo, atendiendo tanto las necesidades físicas como emocionales de cada paciente.",
     icon: "default-ico",
     color: "bg-mediumBlue",
-    imageUrl: "https://res.cloudinary.com/daassyisd/image/upload/v1718047892/se856h3baeoewtgv6yx4.webp"
+    imageUrl: "/service/enfermeria.webp"
   },
   {
     id: 2,
@@ -77,7 +77,7 @@ const features: Feature[] = [
     description: "Cuidado integral y humanista. Brindamos cuidado personalizado y de alta calidad. Asistencia integral, desde el manejo de condiciones crónicas hasta la ayuda en actividades diarias, respetando la dignidad y el bienestar emocional de cada persona.",
     icon: "default-ico",
     color: "bg-darkBlue",
-    imageUrl: "https://res.cloudinary.com/daassyisd/image/upload/v1718047914/tiskcwgxy4mnfka9lbcg.webp"
+    imageUrl: "/service/geriatrico.webp"
   },
   {
     id: 3,
@@ -85,7 +85,7 @@ const features: Feature[] = [
     description: "Recuperación personalizada. Desarrollamos programas de recuperación adaptados a las necesidades individuales. Técnicas avanzadas para garantizar tratamientos seguros y eficaces. Promovemos tanto la recuperación física como el bienestar emocional.",
     icon: "default-ico",
     color: "bg-bright",
-    imageUrl: "https://res.cloudinary.com/daassyisd/image/upload/v1718047952/ta2fvb85zyamu2z6pt4q.webp"
+    imageUrl: "/service/rehabilitacion.webp"
   },
   {
     id: 4,
@@ -93,7 +93,7 @@ const features: Feature[] = [
     description: "Bienestar emocional y mental. Diseñados para promover el bienestar emocional y mental. Atención profesional en un entorno seguro y confidencial, desarrollando planes de tratamiento adaptados a las necesidades individuales.",
     icon: "default-ico",
     color: "bg-rose-600",
-    imageUrl: "https://res.cloudinary.com/daassyisd/image/upload/v1718047974/qs42z4z2qerjlgm6awwt.webp"
+    imageUrl: "/service/psicologia.webp"
   }
 ];
 

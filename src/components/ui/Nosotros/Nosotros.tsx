@@ -22,19 +22,19 @@ const features: Feature[] = [
     id: 1,
     title: "Misión",
     description: "Proporcionar acceso confiable a personal de salud asistencial calificado en Lima y Perú. Nos comprometemos a brindar atención integral en áreas física, psicológica y de rehabilitación, asegurando un servicio cálido y excepcional que haga una diferencia positiva en la vida de nuestras familias clientes.",
-    imageUrl: "https://res.cloudinary.com/daassyisd/image/upload/v1718047453/gqbkvgrx2cjf4qzes6qx.webp"
+    imageUrl: "/about/mision.webp"
   },
   {
     id: 2,
     title: "Visión",
     description: "Ser líderes en el cuidado de la salud en Lima y Perú, ofreciendo un servicio integral y personalizado que promueva el bienestar y la calidad de vida de cada persona. Aspiramos a ser reconocidos por nuestra excelencia, empatía y compromiso en el cuidado de los seres queridos de las familias peruanas.",
-    imageUrl: "https://res.cloudinary.com/daassyisd/image/upload/v1718047219/tysqjzby0oijt2huzuy2.webp"
+    imageUrl: "/about/vision.webp"
   },
   {
     id: 3,
     title: "¿Qué Hacemos?",
     description: "Conectamos a profesionales de salud calificados con familias que necesitan apoyo en el cuidado de sus seres queridos. Nuestro enfoque es comprender las necesidades específicas de cada cliente, proporcionando soluciones personalizadas que garantizan un cuidado integral y de calidad.",
-    imageUrl: "https://res.cloudinary.com/daassyisd/image/upload/v1718047238/vwwvulzcnqh2psfkm8jk.webp"
+    imageUrl: "/about/about.webp"
   },
 ];
 
