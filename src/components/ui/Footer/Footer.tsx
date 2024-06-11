@@ -1,8 +1,5 @@
 import Link from "next/link";
 
-// Define el tipo de icono
-type IconType = "default-ico" | "other-ico"; // Agrega más tipos de iconos si es necesario
-
 // Define las propiedades de FooterItem
 export type FooterItemProps = {
   text: string;
@@ -23,7 +20,7 @@ export type FooterBlockProps = {
 const FooterItem = ({ text, link }: FooterItemProps) => {
   return (
     <li>
-      <Link href={link} className="duration-200 hover:text-blue-600 dark:hover:text-blue-500">
+      <Link href={link} className="duration-200 hover:text-green-600 dark:hover:text-bright">
         {text}
       </Link>
     </li>
@@ -33,7 +30,7 @@ const FooterItem = ({ text, link }: FooterItemProps) => {
 const FooterBlockItem = ({ title, items }: FooterBlockItemProps) => {
   return (
     <div className="space-y-6">
-      <h1 className="text-lg font-semibold text-gray-900 dark:text-gray-100">{title}</h1>
+      <h1 className="text-lg font-semibold text-darkBlue dark:text-light">{title}</h1>
       <ul className="space-y-3">
         {items.map((item) => (
           <FooterItem key={item.link} {...item} />
@@ -63,7 +60,6 @@ const footerBlocks = [
         text: "Servicios",
         link: "#servicios",
       },
-      
     ],
   },
   {
@@ -85,71 +81,91 @@ const footerBlocks = [
         text: "Términos y Condiciones",
         link: "/terms",
       },
-      {
-        id: 4,
-        text: "Preguntas Frecuentes",
-        link: "/faq",
-      },
     ],
   },
 ];
 
 const FooterBlock = () => {
   return (
-    <footer className="bg-gray-100 dark:bg-gray-900 text-gray-700 dark:text-gray-300">
-      <div className="max-w-7xl mx-auto px-5 sm:px-10 md:px-12 lg:px-5 grid grid-cols-2 lg:grid-cols-6 gap-12 lg:gap-16 py-20">
-        <div className="space-y-6 col-span-2">
+    <footer className="bg-light dark:bg-veryDarkBlue text-gray-700 dark:text-light">
+      <div className="max-w-7xl mx-auto px-5 sm:px-10 md:px-12 lg:px-5 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-12 lg:gap-16 py-20">
+        <div className="space-y-6">
           <Link href="/">
-            <span className="text-transparent bg-clip-text bg-gradient-to-tr from-blue-800 to-indigo-400 font-bold text-2xl">
+            <span className="text-bright bg-clip-text bg-gradient-to-tr from-mediumBlue to-darkBlue font-bold text-2xl">
               Asisteser
             </span>
           </Link>
-          <p className="max-w-lg">
-            Proporcionamos acceso confiable a personal de salud asistencial altamente calificado en Lima y todo el Perú. Nos comprometemos a brindar
-            atención integral y profesional.
+          <p className="text-black dark:text-white text-justify">
+            Proporcionamos acceso confiable a personal de salud asistencial altamente calificado en Lima y todo el Perú. Nos comprometemos a brindar atención integral y profesional.
           </p>
         </div>
 
-        {footerBlocks.map((footerBlock) => (
-          <FooterBlockItem key={footerBlock.id} {...footerBlock} />
-        ))}
+        <div>
+          <h2 className="font-bold mb-6 uppercase text-darkBlue dark:text-light">Menu</h2>
+          <nav className="flex flex-col gap-4">
+            <Link href="/" className="hover:underline">Inicio</Link>
+            <Link href="#nosotros" className="hover:underline">Nosotros</Link>
+            <Link href="#servicios" className="hover:underline">Servicios</Link>
+            <Link href="#contacto" className="hover:underline">Contacto</Link>
+          </nav>
+        </div>
 
-        <div className="space-y-6 col-span-2">
-          <h1 className="text-lg font-semibold text-gray-900 dark:text-gray-100">Boletín</h1>
-          <form className="w-full max-w-2xl flex flex-col sm:flex-row gap-3">
-            <input
-              type="email"
-              placeholder="tucorreo@example.com"
-              className="px-5 py-2.5 rounded-md outline-none flex-1 bg-gray-200 dark:bg-gray-800"
-            />
-            <button className="outline-none w-full py-2.5 px-5 sm:w-max bg-blue-600 text-white rounded-md flex items-center justify-center">
-              Suscríbete
-            </button>
-          </form>
+        <div>
+          <h2 className="font-bold mb-6 uppercase text-darkBlue dark:text-light">Redes sociales</h2>
+          <nav className="flex flex-col gap-4">
+            <a href="https://www.facebook.com/asisteser" target="_blank" className="flex items-center gap-2 hover:bg-gray-100 dark:hover:bg-sky-600 p-2 rounded-lg transition-colors">
+              <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" className="w-[20px] h-[20px]" alt="Facebook" />
+              Facebook
+            </a>
+            <a href="https://www.instagram.com/asisteser" target="_blank" className="flex items-center gap-2 hover:bg-gray-100 dark:hover:bg-sky-600 p-2 rounded-lg transition-colors">
+              <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" className="w-[20px] h-[20px]" alt="Instagram" />
+              Instagram
+            </a>
+            <a href="https://twitter.com/asisteser" target="_blank" className="flex items-center gap-2 hover:bg-gray-100 dark:hover:hover:bg-sky-600 p-2 rounded-lg transition-colors">
+              <img src="https://cdn-icons-png.flaticon.com/512/1384/1384065.png" className="w-[20px] h-[20px]" alt="Twitter" />
+              Twitter
+            </a>
+          </nav>
+        </div>
+
+        <div>
+          <h2 className="font-bold mb-6 uppercase text-darkBlue dark:text-light">Contacto</h2>
+          <div className="flex flex-col gap-4">
+            <p className="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+              Jirón Teniente Legua Romero 146, Lima, Peru
+            </p>
+            <p className="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+              contacto@asisteser.pe
+            </p>
+            <p className="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+              </svg>
+              (+51) 967 930 749
+            </p>
+          </div>
         </div>
       </div>
-      <div className="max-w-7xl mx-auto px-5 sm:px-10 md:px-12 lg:px-5">
-        <div className="w-full flex flex-col md:flex-row gap-4 items-center sm:justify-between py-3 border-t border-gray-200 dark:border-t-gray-800 text-gray-700 dark:text-gray-300">
-          <div className="flex text-center sm:text-left sm:min-w-max">
-            <p> © 2024 Asisteser Todos los derechos reservados </p>
-          </div>
-          <div className="flex justify-center sm:justify-end w-full gap-3">
-            <a href="https://www.facebook.com/asisteser" aria-label="social link" rel="noreferer">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" className="w-5 h-5" viewBox="0 0 16 16">
-                <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z" />
-              </svg>
-            </a>
-            <a href="https://www.linkedin.com" aria-label="social link" rel="noreferer">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" className="w-5 h-5" viewBox="0 0 16 16">
-                <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z" />
-              </svg>
-            </a>
-            <a href="https://www.instagram.com" aria-label="social link" rel="noreferer">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" className="w-5 h-5" viewBox="0 0 16 16">
-                <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z" />
-              </svg>
-            </a>
-          </div>
+      <hr className="my-4 border-gray-200 dark:border-gray-700" />
+      <div className="flex flex-col xl:flex-row gap-4 items-center justify-between">
+        <p className="text-gray-800 dark:text-light text-center md:text-left">
+          &copy; 2024 <span className="text-gray-900 dark:text-bright font-bold">Asisteser.</span> Todos los derechos reservados.
+        </p>
+        <div className="flex flex-col md:flex-row items-center gap-2">
+          <Link href="/terms" className="text-gray-700 dark:text-light hover:text-gray-900 dark:hover:text-bright transition-colors">
+            Términos y condiciones
+          </Link>
+          <span className="hidden md:flex">|</span>
+          <Link href="/privacy-policy" className="text-gray-700 dark:text-light hover:text-gray-900 dark:hover:text-bright transition-colors">
+            Política de privacidad
+          </Link>
         </div>
       </div>
     </footer>

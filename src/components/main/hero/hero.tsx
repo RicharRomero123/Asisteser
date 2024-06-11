@@ -1,8 +1,5 @@
 "use client"
-import Image from 'next/image'
 import Link from 'next/link'
-import Lottie from 'lottie-react'
-import Nurse from "./Nurse.json"
 
 const metrics = [
   {
@@ -12,8 +9,8 @@ const metrics = [
         <path fillRule="evenodd" d="M5 2a1 1 0 011 1v1h1a1 1 0 010 2H6v1a1 1 0 01-2 0V6H3a1 1 0 010-2h1V3a1 1 0 011-1zm0 10a1 1 0 011 1v1h1a1 1 0 110 2H6v1a1 1 0 11-2 0v-1H3a1 1 0 110-2h1v-1a1 1 0 011-1zM12 2a1 1 0 01.967.744L14.146 7.2 17.5 9.134a1 1 0 010 1.732l-3.354 1.935-1.18 4.455a1 1 0 01-1.933 0L9.854 12.8 6.5 10.866a1 1 0 010-1.732l3.354-1.935 1.18-4.455A1 1 0 0112 2z" clipRule="evenodd" />
       </svg>
     ),
-    stat: "4.5 Stars",
-    title: "430 Reviews",
+    stat: "+10 Años",
+    title: "Experiencia",
   },
   {
     id: 2,
@@ -25,8 +22,8 @@ const metrics = [
         />
       </svg>
     ),
-    stat: "H 24/24",
-    title: "Soporte",
+    stat: "+20",
+    title: "Enfermeras",
   },
   {
     id: 3,
@@ -38,67 +35,67 @@ const metrics = [
         />
       </svg>
     ),
-    stat: "+ 5k",
+    stat: "+ 1000",
     title: "Clientes",
   },
 ];
 
 export default function HeroSection() {
   return (
-    <>
-      <main>
-        <section className="relative bg-green-50 dark:bg-gray-900/30 pt-16 lg:pt-8 pb-32 lg:pb-4">
+    
+        <section className="relative bg-light dark:bg-veryDarkBlue/30 pt-16 lg:pt-8 pb-32 lg:pb-4">
           <div className="mx-auto lg:max-w-7xl w-full px-5 sm:px-10 md:px-12 lg:px-5 relative">
-            <div className="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 lg:-translate-x-0 lg:-translate-y-0 lg:left-0 lg:top-16 w-40 h-40 skew-x-6 opacity-50 dark:opacity-80 rounded-full bg-gradient-to-bl from-green-600 to-sky-400 blur-3xl flex" />
+            <div className="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 lg:-translate-x-0 lg:-translate-y-0 lg:left-0 lg:top-16 w-40 h-40 skew-x-6 opacity-50 dark:opacity-80 rounded-full bg-gradient-to-bl from-darkBlue to-mediumBlue blur-3xl flex" />
             <div className="flex text-center lg:text-left flex-col lg:items-center lg:flex-row gap-8 lg:gap-10 xl:gap-12 relative max-w-4xl lg:max-w-none">
               <div className="space-y-8 xl:space-y-10 lg:py-12 flex-1 lg:w-1/2">
-                <h1 className="text-green-950 dark:text-white text-3xl/tight sm:text-4xl/tight md:text-5xl/tight xl:text-6xl/tight font-bold">
-                  Cuidado de Salud <span className="text-transparent bg-clip-text bg-gradient-to-br from-green-700 to-sky-600">Asistencial</span> en Lima y Perú
-                </h1>
-                <p className="text-gray-700 dark:text-gray-300 max-w-md mx-auto lg:max-w-none">
-                  Proporcionamos acceso a personal de salud altamente calificado para el bienestar de sus seres queridos.
-                </p>
+              <h1 className="text-darkBlue dark:text-light text-3xl/tight sm:text-4xl/tight md:text-5xl/tight xl:text-6xl/tight font-bold">
+  Enfermeras a domicilio y servicio asistencial en Perú
+</h1>
+<p className="text-gray-700 dark:text-light max-w-md mx-auto lg:max-w-none">
+  Proporcionamos acceso a personal de salud altamente calificado para el bienestar de sus seres queridos.
+</p>
                 <div className="flex flex-wrap items-center gap-4 z-30 sm:w-max sm:flex-nowrap mx-auto lg:mx-0">
-                  <Link href="https://wa.link/s79nyd" className="px-5 h-12 flex items-center sm:w-max w-full justify-center bg-gradient-to-br from-green-700 to-sky-600 text-white rounded-lg ease-linear transition">
+                  <Link href="https://wa.link/s79nyd" className="px-5 h-12 flex items-center sm:w-max w-full justify-center bg-gradient-to-br from-darkBlue to-mediumBlue text-light rounded-lg ease-linear transition">
                     ¡Solicita una Consulta!
                   </Link>
-                  <Link href="#" className="px-5 h-12 flex items-center sm:w-max w-full justify-center gap-x-3 border border-gray-200 dark:border-gray-900/60 rounded-lg text-green-800 dark:text-gray-100 bg-green-50 dark:bg-gray-900">
+                  <Link href="#" className="px-5 h-12 flex items-center sm:w-max w-full justify-center gap-x-3 border border-light dark:border-veryDarkBlue/60 rounded-lg text-darkBlue dark:text-light bg-bright dark:bg-veryDarkBlue">
                     <span>
                       <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                         <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd" />
                       </svg>
                     </span>
-                    Watch Demo
+                    Ver demostración
                   </Link>
                 </div>
-                <div className="max-w-lg lg:max-w-none mx-auto grid sm:grid-cols-3 divide-y divide-gray-100 dark:divide-gray-900 sm:divide-y-0 sm:gap-2 p-4 py-0 sm:py-4 text-left rounded-lg bg-white dark:bg-gray-950 border border-gray-100 dark:border-gray-900 shadow-sm shadow-gray-200/50 dark:shadow-transparent">
+                <div className="max-w-lg lg:max-w-none mx-auto grid sm:grid-cols-3 divide-y divide-gray-100 dark:divide-veryDarkBlue sm:divide-y-0 sm:gap-2 p-4 py-0 sm:py-4 text-left rounded-lg bg-light dark:bg-veryDarkBlue border border-light dark:border-veryDarkBlue shadow-sm shadow-gray-200/50 dark:shadow-transparent">
                   {metrics.map((metric) => (
                     <div key={metric.id} className="flex items-center gap-x-4 py-4 sm:py-0">
-                      <span className="w-10 h-10 text-white bg-gradient-to-br from-green-700 to-sky-400 rounded-md flex items-center justify-center">
+                      <span className="w-10 h-10 text-light bg-gradient-to-br from-darkBlue to-mediumBlue rounded-md flex items-center justify-center">
                         {metric.icon}
                       </span>
                       <div className="flex-1 flex flex-col text-sm">
-                        <h4 className="text-gray-700 dark:text-gray-300 font-semibold">{metric.stat}</h4>
+                        <h4 className="text-gray-700 dark:text-light font-semibold">{metric.stat}</h4>
                         <span className="text-xs text-gray-400">{metric.title}</span>
                       </div>
                     </div>
                   ))}
                 </div>
               </div>
-              <div aria-hidden="true" className="flex-1 lg:w-1/2 relative hidden lg:flex justify-end pr-8">
-                <div className="rounded-lg absolute right-0 bottom-0 w-11/12 h-2/5 bg-gradient-to-tr from-green-50 to-sky-100 dark:bg-gradient-to-tr dark:from-gray-950 dark:to-gray-700" style={{ zIndex: 1 }} />
-                <Lottie
-                  animationData={Nurse}
-                  autoplay
-                  loop
-                  style={{ width: 'auto', height: 'auto', zIndex: 2 }}
+              <div aria-hidden="true" className="flex-1 lg:w-1/2 relative flex justify-center lg:justify-end pr-8">
+                <div className="rounded-lg absolute right-0 bottom-0 w-11/12 h-2/5 bg-gradient-to-tr from-bright to-light dark:bg-gradient-to-tr dark:from-veryDarkBlue dark:to-mediumBlue" style={{ zIndex: 1 }} />
+               
+                <img
+                  src="https://res.cloudinary.com/daassyisd/image/upload/v1718043728/dxnizhcelc4fzeqledvd.png"
+                  alt="Healthcare"
+                  width={500}
+                  height={500}
+                  style={{ zIndex: 2 }}
                   className="relative"
                 />
               </div>
             </div>
           </div>
         </section>
-      </main>
-    </>
+
   );
 }

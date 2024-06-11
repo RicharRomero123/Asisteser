@@ -10,6 +10,7 @@ interface FeatureItemProps {
   description: string;
   icon: IconType;
   color: string;
+  imageUrl: string; // Nueva propiedad para la URL de la imagen
 }
 
 // Define las propiedades de Feature
@@ -19,6 +20,7 @@ interface Feature {
   description: string;
   icon: IconType;
   color: string;
+  imageUrl: string; // Nueva propiedad para la URL de la imagen
 }
 
 const iconRender = (val: IconType) => {
@@ -34,18 +36,28 @@ const iconRender = (val: IconType) => {
   }
 };
 
-const FeatureItem = ({ title, description, icon, color }: FeatureItemProps) => {
+const FeatureItem = ({ title, description, icon, color, imageUrl }: FeatureItemProps) => {
   return (
-    <div className="p-4 bg-gray-100 dark:bg-gray-900 rounded-lg space-y-3 h-full flex flex-col">
+    <div className="p-4 bg-light dark:bg-veryDarkBlue rounded-lg space-y-3 h-full flex flex-col">
       <span className={`p-3 flex w-max rounded-full text-white ${color}`}>
         {iconRender(icon)}
       </span>
-      <h1 className="flex text-lg font-semibold capitalize text-gray-900 dark:text-white">
+      <h1 className="flex text-lg font-semibold capitalize text-darkBlue dark:text-light">
         {title}
       </h1>
-      <p className="text-sm font-light text-gray-700 dark:text-gray-300 flex-grow">
+      <p className="text-sm font-light text-gray-700 dark:text-light flex-grow">
         {description}
       </p>
+      <img
+        src={imageUrl}
+        alt={title}
+        className="rounded-lg"
+      />
+      <div className="flex justify-center mt-4">
+        <Link href="#" className="bg-mediumBlue dark:bg-bright text-white rounded-full px-6 h-12 flex items-center">
+          Contáctanos
+        </Link>
+      </div>
     </div>
   );
 };
@@ -56,50 +68,46 @@ const features: Feature[] = [
     title: "Servicios de enfermería técnica",
     description: "Atención humanista y profesional. Ofrecemos servicios de enfermería técnica con un enfoque humanista. Nuestro equipo capacitado brinda cuidado personalizado, seguro y efectivo, atendiendo tanto las necesidades físicas como emocionales de cada paciente.",
     icon: "default-ico",
-    color: "bg-sky-600"
+    color: "bg-mediumBlue",
+    imageUrl: "https://res.cloudinary.com/daassyisd/image/upload/v1718047892/se856h3baeoewtgv6yx4.webp"
   },
   {
     id: 2,
     title: "Servicios de técnicas geriátricas",
     description: "Cuidado integral y humanista. Brindamos cuidado personalizado y de alta calidad. Asistencia integral, desde el manejo de condiciones crónicas hasta la ayuda en actividades diarias, respetando la dignidad y el bienestar emocional de cada persona.",
     icon: "default-ico",
-    color: "bg-indigo-600"
+    color: "bg-darkBlue",
+    imageUrl: "https://res.cloudinary.com/daassyisd/image/upload/v1718047914/tiskcwgxy4mnfka9lbcg.webp"
   },
   {
     id: 3,
     title: "Servicios de terapia física y rehabilitación",
     description: "Recuperación personalizada. Desarrollamos programas de recuperación adaptados a las necesidades individuales. Técnicas avanzadas para garantizar tratamientos seguros y eficaces. Promovemos tanto la recuperación física como el bienestar emocional.",
     icon: "default-ico",
-    color: "bg-orange-600"
+    color: "bg-bright",
+    imageUrl: "https://res.cloudinary.com/daassyisd/image/upload/v1718047952/ta2fvb85zyamu2z6pt4q.webp"
   },
   {
     id: 4,
     title: "Servicios de psicología",
     description: "Bienestar emocional y mental. Diseñados para promover el bienestar emocional y mental. Atención profesional en un entorno seguro y confidencial, desarrollando planes de tratamiento adaptados a las necesidades individuales.",
     icon: "default-ico",
-    color: "bg-rose-600"
+    color: "bg-rose-600",
+    imageUrl: "https://res.cloudinary.com/daassyisd/image/upload/v1718047974/qs42z4z2qerjlgm6awwt.webp"
   }
 ];
 
 const Features = () => {
   return (
-    <section id="servicios" className="py-20">
-    <div className="max-w-7xl mx-auto px-5 sm:px-10 md:px-12 lg:px-5">
-      <div className="flex flex-col lg:flex-row lg:items-center gap-8 lg:gap-10 xl:gap-14">
-        <div className="flex-1 py-10 lg:py-8 space-y-8 max-w-2xl mx-auto text-center lg:text-left">
-          <h2 className="text-4xl font-semibold text-gray-900 dark:text-white">
-            Cuida tu salud con Asisteser
+    <section id="servicios" className="py-20 bg-light dark:bg-veryDarkBlue/30">
+      <div className="max-w-7xl mx-auto px-5 sm:px-10 md:px-12 lg:px-5">
+        <div className="space-y-8 max-w-2xl mx-auto text-center">
+          <h2 className="text-4xl font-semibold text-darkBlue dark:text-light">
+            Nuestros Servicios
           </h2>
-          <p className="text-gray-700 dark:text-gray-300 max-w-md mx-auto lg:mx-0">
-            En Asisteser, nos dedicamos a proporcionar servicios de salud asistencial de alta calidad, diseñados para mejorar tu bienestar físico y emocional. Confía en nuestro equipo de profesionales para recibir una atención integral y personalizada.
-          </p>
-          <div className="flex justify-center lg:justify-start">
-            <Link href="#" className="bg-sky-700 dark:bg-sky-500 text-white rounded-full px-6 h-12 flex w-max items-center">
-              Contáctanos
-            </Link>
-          </div>
+          
         </div>
-        <div className="lg:w-[55%] xl:w-3/5 lg:items-center grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 pt-10">
           {features.map((feature) => (
             <div key={feature.id} className="h-full">
               <FeatureItem {...feature} />
@@ -107,8 +115,7 @@ const Features = () => {
           ))}
         </div>
       </div>
-    </div>
-  </section>
+    </section>
   );
 };
 
