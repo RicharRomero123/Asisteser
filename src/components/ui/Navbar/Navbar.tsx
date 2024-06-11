@@ -38,7 +38,7 @@ const Navbar = () => {
       }} className={
         `fixed bg-mediumBlue/40 inset-0 z-30 ${navIsOpened ? "lg:hidden" : "hidden lg:hidden"}`
       } />
-      <header className="sticky top-0 w-full flex items-center h-20 border-b  dark:border-b-veryDarkBlue z-40 bg-bright/70 dark:bg-veryDarkBlue/95 backdrop-filter backdrop-blur-xl">
+      <header className="sticky top-0 w-full flex items-center h-20 border-b  dark:border-b-veryDarkBlue z-40 bg-bright/90 dark:bg-veryDarkBlue/95 backdrop-filter backdrop-blur-xl">
         <nav className="relative mx-auto lg:max-w-7xl w-full px-5 sm:px-10 md:px-12 lg:px-5 flex gap-x-5 justify-between items-center">
           <div className="flex items-center min-w-max gap-4">
             <Link href="/" className="relative flex items-center gap-4">
