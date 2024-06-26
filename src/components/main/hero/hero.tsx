@@ -87,8 +87,8 @@ export default function HeroSection() {
                 <img
                   src="/image/Enfermera.webp"
                   alt="Healthcare"
-                  width={500}
-                  height={500}
+                  width={700}
+                  height={700}
                   style={{ zIndex: 2 }}
                 />
               </div>

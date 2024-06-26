@@ -16,7 +16,7 @@ const Location = () => {
           </p>
           <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6559.065001118863!2d-76.99610928916779!3d-12.177449665191888!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105b9cbf5a2faa7%3A0x9637cb6237aaf0d9!2sTte.%20Legua%20Romero%20146%2C%20Chorrillos%2015056!5e0!3m2!1ses-419!2spe!4v1718073335248!5m2!1ses-419!2spe"
+              src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d26245.19235574072!2d-77.11742546619654!3d-12.086721899451549!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTLCsDA1JzI5LjciUyA3N8KwMDQnMjEuNiJX!5e0!3m2!1ses!2spe!4v1719430601303!5m2!1ses!2spe"
               width="600"
               height="450"
               style={{ border: 0 }}
