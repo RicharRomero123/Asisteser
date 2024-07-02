@@ -90,7 +90,7 @@ export default function HeroSection() {
                   width={700}
                   height={700}
                   style={{ zIndex: 2 }}
-                />
+                />  
               </div>
             </div>
           </div>
