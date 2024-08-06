@@ -6,6 +6,7 @@ import Location from "@/components/ui/Location/Location";
 import Nosotros from "@/components/ui/Nosotros/Nosotros";
 import Features from "@/components/ui/Servicios/Servicios";
 import Testimonials from "@/components/ui/Testimonials/Testimonials";
+import { VortexDemo } from "@/components/ui/WorkWithUs/FormWorkPage";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
         <CallToActionWithVideo></CallToActionWithVideo>
         <Nosotros></Nosotros>
         <Features></Features>
+        <VortexDemo/>
         <Testimonials></Testimonials>
         <Location></Location>
         <Coverage></Coverage>
